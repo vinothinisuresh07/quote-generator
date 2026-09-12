@@ -1,0 +1,64 @@
+*{
+    margin: 0%;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    margin-top: 60px;
+}
+#educat,#kalam{
+    font-size: large;
+    cursor: pointer;
+    
+}
+#educat:hover, #kalam:hover ,#bttn:hover{
+color: rgb(205, 147, 219);
+}
+#center-card{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#quote{
+    display: flex;
+    margin: 40px auto;
+    max-width: 420px;
+    padding:25px;
+    border-radius: 10px;
+    background-color: rgb(162, 134, 180);
+    text-align: center;
+    min-height: 320px;
+    flex-direction: column;
+    margin-top: 10px;
+
+
+}
+#text{
+    margin-top: -40px;
+}
+#author{
+    margin-top: 10px;
+    color: rgb(17, 1, 31);
+}
+#button-row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+#icon{
+    font-size: 130px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+#bttn ,#copy{
+    color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    background-color: rgb(30, 3, 56);
+
+}

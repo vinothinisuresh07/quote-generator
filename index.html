@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quote Generator</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>QUOTE GENERATOR</h1>
+        <div id="center-card">
+            <h2 id="educat">Education</h2>
+            <h2 id='kalam'>Kalam</h2>
+        </div>
+            <div id="quote">
+                 <span id="icon">&#8220;</span>
+                <h2 id="text"></h2>
+                <p id="author"></p>
+                <div id="button-row">
+             <button id="bttn">New quote</button>
+             <button id="copy">copy to clipboard</button>
+             </div>
+            </div>
+    
+        <script>
+            const quote=document.getElementById('quote');
+            const quoteText=document.getElementById('text');
+            const authorText=document.getElementById('author');
+            const bttn=document.getElementById('bttn');
+            const education=document.getElementById('educat');
+            const kalamQuote=document.getElementById('kalam');
+            const copyclip=document.getElementById('copy');
+            const educational=[{ text:"Live as if you were to die tomorrow. Learn as if you were to live forever.",author:"— Mahatma Gandhi"},
+                               {text:"The beautiful thing about learning is that nobody can take it away from you.",author:" — B. B. King"},
+                               {text:"Education is the most powerful weapon which you can use to change the world.",author:"— Nelson Mandela"},
+                               {text:"The only person who is educated is the one who has learned how to learn and change.",author:" — Carl Rogers"},
+                               {text:"Anyone who stops learning is old, whether at twenty or eighty.",author:" — Henry Ford"},
+                               {text:"Learning never exhausts the mind.",author:" — Leonardo da Vinci"},
+                               {text:"The roots of education are bitter, but the fruit is sweet.",author:" — Aristotle"},
+                               {text:"I am still learning.",author:" — Michelangelo"},
+                               {text:"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.",author:" — Brian Herbert"},
+                               {text:"Develop a passion for learning. If you do, you will never cease to grow.",author:" — Anthony J. D'Angelo"},
+                            ];
+            const kalam=[{text:"Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"You have to dream before your dreams can come true.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Dream is not that which you see while sleeping, it is something that does not let you sleep.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Excellence is a continuous process and not an accident.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Man needs difficulties in life because they are necessary to enjoy the success.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"If you want to shine like a sun, first burn like a sun.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"All of us do not have equal talent. But, all of us have an equal opportunity to develop our talents.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Small aim is a crime; have great aim.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Thinking should become your capital asset, no matter whatever ups and downs you come across in your life.", author:"— A. P. J. Abdul Kalam"},
+                         {text:"Be more dedicated to making solid achievements than in running after swift but synthetic happiness.", author:"— A. P. J. Abdul Kalam"}
+                        ];    
+            let current=educational;
+            let randomIndex;
+            function selectcategory(category){
+                   if (category=='education'){
+                    current=educational;
+                   }
+                   else if(category=='kalam'){
+                    current=kalam;
+                   }
+                   showNewQuote();
+                }
+                function showNewQuote(){
+                 randomIndex=Math.floor(Math.random()*current.length);
+                   quoteText.textContent=current[randomIndex].text;
+                   authorText.textContent=current[randomIndex].author;
+            }                            
+            education.addEventListener("click",function(){
+                selectcategory('education');            })
+            kalamQuote.addEventListener("click",function(){
+                selectcategory('kalam')}
+            )
+            bttn.addEventListener('click',function(){
+                showNewQuote();
+            })
+            copyclip.addEventListener('click',function(){
+                navigator.clipboard.writeText(current[randomIndex].text)
+                .then(function(){
+                    copyclip.textContent='Copied';
+                })
+            })
+         showNewQuote(); 
+        </script>
+    </body>
+</html>
