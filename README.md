@@ -23,7 +23,7 @@ A simple, responsive web app that displays random quotes from two categories —
 - The "Copy to clipboard" button uses the Clipboard API to copy the quote text
 
 ## Live Demo
-
+https://vinothinisuresh07.github.io/quote-generator/
 
 ## Getting Started
 
