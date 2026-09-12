@@ -24,7 +24,6 @@ A simple, responsive web app that displays random quotes from two categories —
 
 ## Live Demo
 
-[Add your deployed link here once live]
 
 ## Getting Started
 
